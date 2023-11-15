@@ -1,0 +1,58 @@
+Primeira Prova – Programação Sonora e Musical – UFPB – 2023.1
+Professor: Carlos Eduardo Batista
+ 
+*********** ATENÇÃO!!!!!! LEIA TODAS AS INSTRUÇÕES!!!!!! ***********
+ 
+- As respostas da prova devem ser enviadas por e-mail (para bidu @ ci.ufpb.br)
+ em um ÚNICO arquivo ZIP contendo os códigos solicitados.
+
+- O título do e-mail e do arquivo ZIP *DEVERÁ* conter "[PROVA01-PSM-231]", 
+ seu nome e matrícula.
+ 
+- TODO CÓDIGO *DEVE* ser comentado com a explicação da lógica e demais 
+ informações solicitadas na questão.
+ 
+- Plágio será punido com a perda da pontuação das respostas por todos os
+ participantes.
+ 
+- O envio deverá ser feito até as 13h59 do dia 21/09/2023
+ 
+*********** ATENÇÃO!!!!!! LEIA TODAS AS INSTRUÇÕES!!!!!! ***********
+
+1) Patch Sintetizador (4 pontos)
+
+Criar um sintetizador que produza diferentes tons baseados em entradas do usuário e que altere o timbre do som com base na frequência.
+
+Instruções:
+
+a) Comece criando um objeto osc~ e um objeto phasor~ que serão nossos osciladores. Estes objetos geram ondas senoidal e de fase, respectivamente. Em seguida, crie um objeto *~ para controlar o volume dos nossos osciladores. Agora, conecte a saída do *~ a um objeto dac~, que é o nosso conversor digital-analógico. Isso nos permitirá ouvir o som produzido pelo osciladores (se tudo for conectado corretamente).
+
+b) Crie objetos de operadores aritméticos e relacionais para alterar a frequência do oscilador baseado em alguma entrada do usuário: faça com que um número inserido (através de um elemento number) gere mais três números: um que seja a metade do número inserido, outro que seja o dobro e outro que seja a frequência multiplicada por 1,5. 
+
+c) Use o objeto moses para dividir a faixa de frequências em duas partes, para dividir as frequências abaixo e acima de 440 Hz - frequências acima de 440 Hz devem ser tocadas por objetos osc~ ao passo que frequências abaixo de 440 Hz devem ser tocadas através do objeto phasor~.
+
+___________________________________________________
+
+2) Patch Sequenciador + Sampler (6 pontos)
+
+Criar um sequenciador rítmico interativo que permita ao usuário controlar diferentes parâmetros do som em tempo real, incluindo o timbre e os efeitos.
+
+Timbre: O timbre do som pode ser alterado entre o gerado por osc~ e o por phasor~. Para isso, crie dois objetos osc~ e phasor~ e conecte a saída de um deles à entrada do objeto *~. Em seguida, crie um objeto sel para selecionar qual oscilador será usado.
+Efeitos: O som gerado pelo sequenciador pode ser gravado com efeitos (reverb, usando o objeto freeverb~). Para isso, crie um objeto freeverb~ e conecte a saída do objeto *~ à entrada do objeto freeverb~.
+
+Use um objeto qlist para armazenar a sequência musical. Utilize o objeto read para carregar um arquivo de texto contendo a sequência.
+Conecte a saída do objeto metro à entrada do objeto qlist~.
+Conecte a saída do objeto qlist~ à entrada do objeto sel.
+Conecte a saída do objeto sel à entrada do objeto *~.
+Conecte a saída do objeto *~ à entrada do objeto freeverb~.
+Conecte a saída do objeto freeverb~ à entrada do objeto dac~.
+
+Adicione um objeto `writesf~` ao seu patch. Este objeto será usado para gravar o som gerado pelo seu sequenciador em um arquivo de áudio.
+
+Conecte a saída de som do seu patch à entrada de um objeto `writesf~`. Crie um objeto `readsf~` que será usado para ler o arquivo de áudio gravado e reproduzi-lo. Adicione um objeto `freverb~` ao loop de feedback para criar um efeito de reverberação. Faça seu patch ser capaz de gravar os sons gerados pelo sequenciador e também implemente a possibilidade de reprodução do arquivo gravado.
+
+____________________________________________________
+
+3) Patch Musical (4 pontos)
+
+Crie um patch que utilize os objetos osc~, *~, dac~, metro, list, e outros que se fizerem necessários para a reprodução de uma pequena melodia (e.g. "parabéns para você", "Do, re, mi, fá", com no mínimo as 20 primeiras notas). Crie a possibilidade de se variar o tempo de reprodução da melodia.
