@@ -1,0 +1,9 @@
+#N canvas 103 39 1217 831 12;
+#X obj 194 63 timer;
+#X text 301 62 diz quanto tempo passou entre dois bangs clicados.;
+#X floatatom 196 102 5 0 0 0 - - - 0;
+#X msg 179 29 bang;
+#X msg 220 29 bang;
+#X connect 0 0 2 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 1;

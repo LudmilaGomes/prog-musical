@@ -1,0 +1,17 @@
+#N canvas 402 139 1030 670 12;
+#X obj 80 97 line;
+#X floatatom 80 135 5 0 0 0 - - - 0;
+#X obj 82 172 osc~;
+#X obj 84 209 *~;
+#X obj 137 199 tgl 19 0 empty empty toggle 0 -10 0 12 #fcfcfc #000000 #000000 0 1;
+#X obj 83 253 dac~;
+#X msg 43 50 400 \, 880 10000;
+#X text 171 61 line: recebe três números \; limites inferior e superior e quanto tempo (em ms) leva para o menor número ser incrementado e alcançar o número maior.;
+#X text 171 142 * funciona como um loop for.;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 3 0 5 1;
+#X connect 4 0 3 1;
+#X connect 6 0 0 0;

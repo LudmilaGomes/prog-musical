@@ -1,0 +1,30 @@
+#N canvas -1318 -67 894 481 12;
+#X obj 45 68 expr (($f1+$f3+$f2)/3);
+#X floatatom 22 20 5 0 0 0 - - -;
+#X floatatom 104 12 5 0 0 0 - - -;
+#X floatatom 191 17 5 0 0 0 - - -;
+#X floatatom 48 123 5 0 0 0 - - -;
+#X obj 289 154 f;
+#X floatatom 289 181 5 0 0 0 - - -;
+#X obj 363 173 + 1;
+#X obj 289 116 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 334 114 5 0 0 0 - - -;
+#X text 323 212 conta cliques;
+#X obj 287 36 random;
+#X floatatom 351 3 5 0 0 0 - - -;
+#X floatatom 290 70 5 0 0 0 - - -;
+#X obj 277 4 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 1;
+#X connect 3 0 0 2;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 5 1;
+#X connect 8 0 5 0;
+#X connect 9 0 5 1;
+#X connect 11 0 13 0;
+#X connect 12 0 11 1;
+#X connect 14 0 11 0;

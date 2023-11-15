@@ -1,0 +1,55 @@
+#N canvas 4066 -1925 1827 937 12;
+#X obj 25 361 writesf~ 2;
+#X msg 175 229 open rec.wav;
+#X msg 176 256 start;
+#X msg 177 282 stop;
+#X obj 86 158 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 197 159 delay 1000;
+#X obj 26 61 osc~ 432;
+#X obj 76 227 adc~;
+#X obj 408 323 dac~;
+#X obj 408 199 readsf~ 2;
+#X obj 530 187 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 441 78 open rec.wav;
+#X msg 468 103 start;
+#X msg 506 133 stop;
+#X obj 202 389 print x;
+#X obj 24 138 *~;
+#X obj 126 11 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 232 194 delay 4000;
+#X obj 591 63 delay 1000;
+#X obj 512 296 print x;
+#X text 456 353 reprodução em loop infinito;
+#X text 12 423 gravação: microfone + oscilador com controle de volume
+;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 2 0 14 0;
+#X connect 3 0 0 0;
+#X connect 3 0 14 0;
+#X connect 4 0 1 0;
+#X connect 4 0 5 0;
+#X connect 4 0 17 0;
+#X connect 5 0 2 0;
+#X connect 6 0 15 0;
+#X connect 7 0 0 0;
+#X connect 7 1 0 1;
+#X connect 9 0 8 0;
+#X connect 9 1 8 1;
+#X connect 9 2 10 0;
+#X connect 10 0 11 0;
+#X connect 10 0 18 0;
+#X connect 10 0 19 0;
+#X connect 11 0 9 0;
+#X connect 12 0 9 0;
+#X connect 12 0 19 0;
+#X connect 13 0 9 0;
+#X connect 13 0 19 0;
+#X connect 15 0 0 1;
+#X connect 15 0 0 0;
+#X connect 16 0 15 1;
+#X connect 17 0 3 0;
+#X connect 18 0 12 0;

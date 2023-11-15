@@ -1,0 +1,18 @@
+#N canvas 2743 -1084 772 512 12;
+#X obj 50 99 metro 300;
+#X obj 47 395 print;
+#X msg 45 159 tick;
+#X obj 40 48 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 44 211 send remote;
+#X obj 44 323 receive remote;
+#X floatatom 193 129 5 0 0 0 - - -;
+#X floatatom 194 328 5 0 0 0 - - -;
+#X obj 199 192 s another;
+#X obj 199 262 r another;
+#X connect 0 0 2 0;
+#X connect 2 0 4 0;
+#X connect 3 0 0 0;
+#X connect 5 0 1 0;
+#X connect 6 0 8 0;
+#X connect 9 0 7 0;

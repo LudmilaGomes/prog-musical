@@ -1,0 +1,12 @@
+#N canvas 952 0 958 956 12;
+#X msg 44 84 open test.wav;
+#X msg 44 108 start;
+#X msg 44 132 stop;
+#X obj 48 195 dac~;
+#X obj 44 156 readsf~ 2;
+#X text 43 23 readsf~: podemos realizar a 'leitura' de um arquivo \; é usado da mesma forma que o writesf~.;
+#X connect 0 0 4 0;
+#X connect 1 0 4 0;
+#X connect 2 0 4 0;
+#X connect 4 0 3 0;
+#X connect 4 1 3 1;
