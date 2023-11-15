@@ -1,0 +1,11 @@
+#N canvas 771 303 763 481 12;
+#X obj 107 48 r par;
+#X obj 221 48 r impar;
+#X obj 107 81 / 2;
+#X obj 221 80 * 2;
+#X obj 221 111 s res;
+#X obj 107 112 s res;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 5 0;
+#X connect 3 0 4 0;
